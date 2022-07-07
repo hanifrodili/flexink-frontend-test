@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *{
+  outline: 1px solid rgba(0, 160, 13, 0.336);
+} */
+body{
+  @apply bg-white text-black h-full
+}
+header{
+  @apply  p-4 shadow-md
+}
+header > nav {
+  @apply flex flex-row gap-5 justify-center
+}
+img:before {
+  content: 'Image not found';
+  display: block;
+  position: absolute;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: gainsboro;
+}
+.main{
+  @apply flex flex-row h-[-webkit-fill-available] max-w-7xl w-full m-auto
+}
+.main > .sidebar{
+  @apply w-[200px] py-6 px-1 border-r
+}
+.main > .content {
+  @apply w-[70%] p-4
+}
+footer{
+  @apply p-4 flex flex-row justify-center border-t
+}
+
+.action-button{
+  @apply flex flex-row gap-2 justify-end py-5
+}
+
+.btn{
+  @apply py-2 px-4 border rounded 
+}
+.btn-primary{
+  @apply bg-blue-700 border-blue-700 text-white font-medium
+}
+.btn-primary-outlined {
+  @apply border-blue-700 text-blue-700 font-medium
+}
+.btn-warning {
+  @apply bg-red-700 border-red-700 text-white font-medium
+}
+
+.btn-warning-outlined {
+  @apply border-red-700 text-red-700 font-medium
+}
+
+.menu-list{
+  @apply list-disc list-inside
+}
+.menu-item{
+  @apply marker:content-none border-b px-4 py-2 cursor-pointer
+}
+.submenu-list {
+  @apply list-inside
+}
+.submenu-item{
+  @apply cursor-pointer marker:content-["➤"] marker:text-sm py-2 hover:bg-blue-200 rounded-lg px-2
+}
+.view-title{
+  @apply text-xl font-semibold mb-4
+}
+.table-default{
+  @apply table-auto w-full
+}
+.table-default th,
+.table-default td {
+  @apply border border-black py-2 px-4 text-left
+}
+.table-default th {
+  @apply font-semibold bg-gray-300 align-text-top
+}
+.table-default td a {
+  @apply underline underline-offset-2 hover:text-blue-700
+}
+
+input, textarea{
+  @apply border border-gray-500 rounded w-full py-1 px-2 focus-visible:outline-1 focus-visible:outline-blue-700
+}  
+.box{
+  @apply w-full h-[400px] border rounded-md text-center p-3
+}
