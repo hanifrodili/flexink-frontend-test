@@ -80,7 +80,7 @@ let postId = route.params.id
 let title = ref('')
 let content = ref('')
 
-const uploadResp = reactive([
+let uploadResp = reactive([
   {
     filename: "",
     originalFilename: "",
@@ -151,8 +151,8 @@ const uploadImage = async () => {
       // uploadResp[0].originalFilename = result[0].originalFilename
       // uploadResp[0].filename = result[0].filename
       // uploadResp[0].filename = result[0].filename
-      // uploadResp = result
-      uploadResp.push(result)
+      uploadResp = result
+      // uploadResp.push(result)
     })
     .catch((error) => {
       console.error('Upload error:', error);
@@ -221,7 +221,7 @@ const registerBBS = async () => {
     Object.assign(data, { [key]: val })
   }
   data.attachedFile.attachedFileInfos = uploadResp
-    console.log("Complete Payload: ", JSON.stringify(data));
+  console.log("Complete Payload: ", JSON.stringify(data));
 
     await fetch(`http://public.flexink.com:9250/api/public/bbs/post`, {
       method: 'POST',
